@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGCS - TINTAS | Inventario - Ítems</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos generales para esta ventana */
+        .container-inventario-items {
+            width: 800px; /* Ancho ajustado para más columnas */
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .header-inventario-items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .header-inventario-items h2 {
+            font-size: 26px;
+            font-weight: 500;
+        }
+
+        /* Campos de búsqueda superiores */
+        .search-area-inventario {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .search-area-inventario label {
+            font-weight: bold;
+            text-align: right;
+            padding-right: 10px;
+            font-size: 16px;
+        }
+
+        .search-area-inventario input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #e6f7ff;
+            font-size: 14px;
+        }
+
+        .search-area-inventario .icon {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Contenedor de la tabla */
+        .table-inventario-container {
+            border: 1px solid #ccc;
+            max-height: 350px;
+            overflow-y: auto;
+            margin-top: 25px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .inventario-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .inventario-table th, .inventario-table td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+            white-space: nowrap; /* Evita que el texto se rompa */
+        }
+
+        .inventario-table th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+
+        /* Estilo para fila seleccionada */
+        .inventario-table .selected-row {
+            background-color: #ffffcc;
+            border: 2px solid #ffcc00;
+        }
+
+        /* Contenedor de botones inferiores */
+        .actions-inventario {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .actions-inventario button {
+            flex: 1;
+            padding: 12px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border: 2px solid #000;
+            box-shadow: 2px 2px 0 #000;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        /* Estilos específicos de los botones inferiores */
+        .btn-buscar, .btn-abrir, .btn-nuevo {
+            background-color: #007bff;
+        }
+
+        .btn-salir {
+            background-color: #ff3333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-inventario-items">
+        <header class="header-inventario-items">
+            <div class="logo-text">GRUPO **GILPA**</div>
+            <h2>INVENTARIO</h2>
+            <div class="list-icon">
+
+
+</div>
+        </header>
+
+        <div class="search-area-inventario">
+            <label for="almacen-display">Almacén:</label>
+            <input type="text" id="almacen-display" name="almacen-display" readonly>
+        </div>
+
+        <div class="search-area-inventario">
+            <label for="item-code-search">Código:</label>
+            <input type="text" id="item-code-search" name="item-code-search" placeholder="Buscar código...">
+            <div class="icon">🔍</div>
+        </div>
+
+        <div class="table-inventario-container">
+            <table class="inventario-table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                        <th>Unidad</th>
+                    </tr>
+                </thead>
+                <tbody id="inventario-tbody">
+                    </tbody>
+            </table>
+        </div>
+
+        <div class="actions-inventario">
+            <button class="btn-buscar" id="btn-buscar-item">Buscar</button>
+            <button class="btn-abrir" id="btn-abrir-item">Abrir</button>
+            <button class="btn-nuevo" id="btn-nuevo-item">Nuevo</button>
+            <button class="btn-salir" onclick="window.location.href='inventario_almacenes.html'">Salir</button>
+        </div>
+    </div>
+
+    <script src="inventario_items.js"></script>
+</body>
+</html>

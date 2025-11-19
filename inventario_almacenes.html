@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGCS - TINTAS | Inventario - Seleccionar Almacén</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos generales para esta ventana */
+        .container-inventario {
+            width: 500px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .header-inventario {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .header-inventario h2 {
+            font-size: 26px;
+            font-weight: 500;
+        }
+
+        .form-group-inventario {
+            display: grid;
+            grid-template-columns: auto 1fr auto; /* Etiqueta - Input - Icono */
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .form-group-inventario label {
+            font-weight: bold;
+            text-align: right;
+            padding-right: 10px;
+            font-size: 18px;
+        }
+
+        .form-group-inventario input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #e6f7ff; /* Fondo azul claro */
+            font-size: 16px;
+        }
+
+        .form-group-inventario .icon {
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* Estilos de la lista de almacenes */
+        .almacen-list-container {
+            border: 1px solid #ccc;
+            max-height: 250px; /* Altura máxima para scroll */
+            overflow-y: auto;
+            margin-bottom: 30px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .almacen-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .almacen-list-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            font-size: 16px;
+        }
+
+        .almacen-list-item:last-child {
+            border-bottom: none;
+        }
+
+        .almacen-list-item:hover {
+            background-color: #e0f7fa; /* Azul claro al pasar el ratón */
+        }
+
+        .almacen-list-item.selected {
+            background-color: #cceeff; /* Azul más oscuro para seleccionado */
+            font-weight: bold;
+            border: 1px solid #007bff;
+        }
+
+        /* Botón Salir */
+        .btn-salir {
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #ff3333; /* Rojo para Salir */
+            border: 2px solid #000;
+            box-shadow: 2px 2px 0 #000;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-inventario">
+        <header class="header-inventario">
+            <div class="logo-text">GRUPO **GILPA**</div>
+            <h2>INVENTARIO</h2>
+            <div class="list-icon">
+
+
+</div>
+        </header>
+
+        <form id="inventario-almacen-form">
+            <div class="form-group-inventario">
+                <label for="almacen-search">Almacén:</label>
+                <input type="text" id="almacen-search" name="almacen-search" placeholder="Buscar almacén...">
+                <div class="icon">🔍</div>
+            </div>
+        </form>
+
+        <div class="almacen-list-container">
+            <ul id="almacen-list" class="almacen-list">
+                </ul>
+        </div>
+
+        <button class="btn-salir" onclick="window.location.href='menu.html'">Salir</button>
+    </div>
+
+    <script src="inventario_almacenes.js"></script>
+</body>
+</html>

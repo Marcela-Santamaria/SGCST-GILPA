@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGCS - TINTAS | Menú Principal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para el Layout del Menú */
+        .menu-container {
+            width: 450px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 50px auto; /* Centrar el contenedor en la página */
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .menu-btn {
+            padding: 25px 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            /* Estilo azul claro y sombra para coincidir con la imagen */
+            background-color: #cceeff;
+            border: 1px solid #99ccff;
+            border-radius: 4px;
+            box-shadow: 2px 2px 0 #99ccff;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .menu-btn:hover {
+            background-color: #aaddff;
+        }
+
+        /* Botón Salir */
+        .btn-exit {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border: 2px solid #000;
+            box-shadow: 2px 2px 0 #000;
+            cursor: pointer;
+            float: right; /* Posicionar a la derecha */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <header class="menu-header">
+            <div class="logo-text">GRUPO **GILPA**</div>
+            <div class="checklist-icon"></div>
+        </header>
+
+        <div class="menu-grid">
+
+            <button class="menu-btn" onclick="goToPage('almacenes.html')">Almacenes</button>
+            <button class="menu-btn" onclick="window.location.href='inventario_almacenes.html'">Inventario</button>
+            <button class="menu-btn" onclick="goToPage('consumo.html')">Consumo</button>
+            <button class="menu-btn" onclick="goToPage('reporte.html')">Reporte</button>
+        </div>
+
+        <button class="btn-exit" onclick="goToPage('index.html')">Salir</button>
+
+    </div>
+
+    <script>
+        function goToPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

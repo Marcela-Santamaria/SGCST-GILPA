@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGCS - TINTAS | Almacenes (Consulta)</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos Específicos para la Ventana de Almacenes (Consulta) */
+        .almacen-container {
+            width: 500px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+        }
+
+        .almacen-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .almacen-header h2 {
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .almacen-form-group {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .almacen-form-group label {
+            font-weight: bold;
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        .almacen-form-group input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #e6f7ff;
+        }
+
+        .almacen-form-group .icon {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Estilos de la tabla */
+        .almacen-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .almacen-table th, .almacen-table td {
+            border: 1px solid #000;
+            padding: 10px;
+        }
+
+        .almacen-table th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+
+        /* Contenedor de botones inferiores */
+        .almacen-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .almacen-actions button {
+            flex: 1;
+            padding: 12px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border: 2px solid #000;
+            box-shadow: 2px 2px 0 #000;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        /* Estilos específicos de los botones inferiores */
+        .btn-buscar, .btn-abrir, .btn-nuevo {
+            background-color: #007bff;
+        }
+
+        .btn-salir {
+            background-color: #ff3333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="almacen-container">
+        <header class="almacen-header">
+            <div class="logo-text">GRUPO **GILPA**</div>
+            <h2>Almacenes</h2>
+            <div class="warehouse-icon"></div>
+        </header>
+
+        <form id="almacen-form">
+            <div class="almacen-form-group">
+                <label for="codigo">Código:</label>
+                <input type="text" id="codigo" name="codigo">
+                <div class="icon">📄</div>
+            </div>
+
+            <div class="almacen-form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+                <div class="icon">📄</div>
+            </div>
+        </form>
+
+        <table class="almacen-table">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody id="almacenes-tbody">
+                </tbody>
+        </table>
+
+        <div class="almacen-actions">
+            <button class="btn-buscar">Buscar</button>
+            <button class="btn-abrir" id="btn-abrir">Abrir</button>
+            <button class="btn-nuevo" onclick="window.location.href='almacenes_edicion.html'">Nuevo</button>
+            <button class="btn-salir" onclick="window.location.href='menu.html'">Salir</button>
+        </div>
+    </div>
+
+    <script src="almacenes.js"></script>
+</body>
+</html>
